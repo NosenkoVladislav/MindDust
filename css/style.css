@@ -825,6 +825,10 @@ body {
     font-size: 16px;
 }
 
+.form-input-wrap {
+    width: 100%;
+    position: relative;
+}
 
 textarea.form-input {
     width: 100%;
@@ -1091,7 +1095,7 @@ textarea.form-input {
 
 .login-wrap {
     display: flex;
-    height: 500px;
+    height: 580px;
     width: 750px;
     margin: 0 auto;
     -webkit-box-shadow: 0 0 20px 24px #00000005;
@@ -1150,6 +1154,7 @@ textarea.form-input {
     position: relative;
     width: 200px;
     height: 70px;
+    margin: 0 auto;
 }
 
 .lp-control-title {
@@ -1289,6 +1294,60 @@ textarea.form-input {
     color: #fff;
 }
 
+.signUp-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.signUp-group .form-input {
+    margin-right: 6%;
+    margin-bottom: 0;
+}
+
+.signUp-group .form-input-wrap {
+    width: 68%;
+    display: flex;
+}
+
+.signUp-group .form-input-wrap:first-child {
+    width: 32%;
+}
+
+.signUp-group input[type=radio] {
+    display: none;
+}
+
+.signUp-group input[type=radio]:checked + .sexTab {
+    background: #fff;
+    border-color: #f3f3f4;
+    -webkit-box-shadow: 0 0 20px 5px #00000014;
+    -moz-box-shadow:0 0 20px 5px #00000014;
+    box-shadow: 0 0 20px 5px #00000014;
+}
+
+.sexTab {
+    width: 50%;
+    padding: 11.2px 15px;
+    text-align: center;
+    background: #fbfbfb;
+    border: 1px solid #f3f3f4;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.sexTab:first-child {
+    border-right: transparent;
+}
+
+.sexTab:last-child {
+    border-left: transparent;
+}
+
+
 #playerPopup.popup-content {
     width: 750px;
     padding-top: 0;
@@ -1301,7 +1360,45 @@ textarea.form-input {
     padding: 0 15px;
 }
 
-/*.video-wrap {*/
+.validate-error {
+    position: absolute;
+    top: -18px;
+    display: flex;
+    padding: 0 7px;
+    width: 100%;
+    align-items: center;
+    background: #000;
+    color: var(--yellow);
+    font-size: 13px;
+    opacity: 0;
+    -webkit-transition: ease-in .3s;
+    -moz-transition: ease-in .3s;
+    -ms-transition: ease-in .3s;
+    -o-transition: ease-in .3s;
+    transition: ease-in .3s;
+}
+
+.signUp-group .validate-error {
+    width: 99px;
+}
+
+.validate-error i {
+    font-size: 10px;
+}
+
+.validate-error.throwed {
+    opacity: 1;
+}
+
+.validate-msg{
+    margin-left: 0.5ch;
+}
+
+.validate-error.passErr {
+    opacity: 1;
+}
+
+    /*.video-wrap {*/
     /*position: relative;*/
     /*padding-bottom: 56.25%;*/
     /*padding-top: 25px;*/
@@ -1345,6 +1442,45 @@ textarea.form-input {
 
 .sidemenu .logo svg{
     width: 200px;
+}
+
+.links-list.open {
+    display: flex;
+    background: var(--blue);
+}
+
+.hamburger {
+    display: none;
+    background: #30303f;
+}
+
+.hamburger:hover {
+    opacity: 1;
+}
+
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+}
+
+.sidebar .hamburger {
+    background-color: #30303f;
+}
+
+.sidebar .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+
+.hamburger--spring .hamburger-inner {
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+
+.sm-sidebar {
+    display: none;
 }
 
 .links-list {
@@ -1487,10 +1623,6 @@ textarea.form-input {
     width: 80%;
 }
 
-.page-content {
-
-}
-
 .page-header {
     width: 100%;
     height: 100px;
@@ -1502,6 +1634,8 @@ textarea.form-input {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin: 0;
+    border-bottom: 0;
 }
 
 .header-search {
@@ -1650,12 +1784,13 @@ textarea.form-input {
 }
 
 .video-component {
-    width: 23%;
+    /*width: 23%;*/
+    width: 100%;
     position: relative;
 }
 
 .video-component .preview {
-    height: 150px;
+    height: 190px;
     width: 100%;
     background-color: #000;
     position: relative;

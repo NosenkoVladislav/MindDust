@@ -158,3 +158,106 @@ $(document).ready(function () {
     }
 });
 
+//registration
+
+$('#signUp-send').click(function (e) {
+    e.preventDefault();
+    isEmpty();
+
+    $('#signUpForm').find('.form-input').each(function () {
+        isValid($(this));
+        passMatch();
+    });
+
+    // if(i === true) {
+    //     $('#signUpForm').submit();
+    // } else {
+    //     return
+    // }
+
+    function isEmpty() {
+        // $('#signUpForm').find('.form-input').each(function () {
+        //     if($(this).val().length != 0 && passMatch() === true) {
+        //         console.log('form can be send')
+        //     } else {
+        //         console.log('smth wrong')
+        //     }
+        // });
+
+    }
+
+    function isValid(selector) {
+        if(selector.val().length < 2) {
+            selector.on('input', function () {
+                selector.prev().removeClass('throwed');
+            });
+            showError(selector);
+        }
+    }
+
+    function showError(selector) {
+        selector.prev().addClass('throwed');
+    }
+
+    function passMatch() {
+        var pass = $('#regPass');
+        var passConf = $('#regPassConf');
+
+        if(pass.val() != passConf.val()) {
+            pass.prev().text('Passwords do not match').addClass('passErr');
+            passConf.prev().text('Passwords do not match').addClass('passErr');
+            return false
+        } else if (pass.val() == passConf.val() && pass.val() != 0 && passConf.val() != 0){
+            pass.prev().text('Please enter your password').removeClass('passErr');
+            passConf.prev().text('Please enter your password').removeClass('passErr');
+            return true
+        }
+    }
+});
+
+$('#toLogin').click(function () {
+    $.magnificPopup.open({
+        items: {
+            src: '#loginPopup'
+        },
+        modal: false,
+        type: 'inline',
+        removalDelay: 500,
+        mainClass: 'mfp-fade',
+        closeOnBgClick: true,
+        showCloseBtn: false
+    })
+});
+
+$('#toRegistration').click(function () {
+    $.magnificPopup.open({
+        items: {
+            src: '#registrationPopup'
+        },
+        modal: false,
+        type: 'inline',
+        removalDelay: 500,
+        mainClass: 'mfp-fade',
+        closeOnBgClick: true,
+        showCloseBtn: false
+    })
+});
+
+$('#menuToggler').click(function () {
+    if ( $('.links-list').css('visibility') == 'hidden' )
+        $('.links-list').css('visibility','visible');
+    else
+        $('.links-list').css('visibility','hidden');
+});
+
+$(window).on('resize',function () {
+    if($(this).width() > 1100) {
+        $('.links-list').css('visibility','visible');
+    } else {
+        $('.links-list').css('visibility','hidden');
+    }
+
+    $('.hamburger').removeClass('is-active')
+
+})
+
