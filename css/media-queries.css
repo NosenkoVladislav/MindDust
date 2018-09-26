@@ -270,6 +270,11 @@
     .header-search {
         right: 15px;
         width: calc(100% - 105px);
+        height: 54px;
+    }
+
+    .header-search .search-input {
+        height: 54px;
     }
 
     .sidemenu {
@@ -329,12 +334,14 @@
 
     .header-search {
         width: calc(100% - 80px);
+        height: 44px;
         right: 10px;
         top: 23px;
     }
 
     .header-search .search-input {
         padding: 10px 40px 10px 10px;
+        height: 44px;
     }
 
     .search-icon {
