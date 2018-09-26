@@ -12,6 +12,7 @@ body {
 /*titles*/
 
 .sm-title {
+    width: 250px;
     display: inline-block;
     position: relative;
     text-transform: uppercase;
@@ -1057,6 +1058,11 @@ textarea.form-input {
     fill: #000;
 }
 
+.sm-close-popup {
+    display: none;
+}
+
+
 /*popup fade animation*/
 
 .mfp-fade.mfp-bg {
@@ -1239,7 +1245,7 @@ textarea.form-input {
 
 .sign-in .form-btn {
     width: 100%;
-    padding: 10px;
+    padding: 11px;
     font-size: 16px;
 }
 
@@ -1442,11 +1448,6 @@ textarea.form-input {
 
 .sidemenu .logo svg{
     width: 200px;
-}
-
-.links-list.open {
-    display: flex;
-    background: var(--blue);
 }
 
 .hamburger {
@@ -1670,6 +1671,18 @@ textarea.form-input {
 
 .header-account .lp-control-btn-bg img {
     width: 100%;
+}
+
+.header-acc-control-sm {
+    display: none;
+    position: relative;
+}
+
+.header-acc-control-sm .dropdown-menu {
+    top: 65px;
+    left: -90px;
+    width: 150px;
+    z-index: 2;
 }
 
 .search-icon {
