@@ -1648,6 +1648,9 @@ textarea.form-input {
     width: 100%;
     padding: 15px 45px 15px 15px;
     outline: none !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 
 .header-search .search-input::placeholder {
@@ -1680,8 +1683,8 @@ textarea.form-input {
 
 .header-acc-control-sm .dropdown-menu {
     top: 65px;
-    left: -90px;
-    width: 150px;
+    left: -110px;
+    width: 170px;
     z-index: 2;
 }
 

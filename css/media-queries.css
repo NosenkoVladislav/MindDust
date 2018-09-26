@@ -139,6 +139,10 @@
         background-color: #30303f;
     }
 
+    .dropdown-menu-list {
+        font-size: 18px;
+    }
+
     .hamburger {
         margin-right: 0;
     }
@@ -307,6 +311,11 @@
     .header-acc-control-sm {
         width: 50px;
         height: 44px;
+    }
+
+    .header-acc-control-sm .dropdown-menu {
+        top: 55px;
+        left: -120px;
     }
 
     .sm-sidebar .logo {

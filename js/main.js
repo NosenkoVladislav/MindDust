@@ -265,7 +265,12 @@ $(window).on('resize',function () {
         $('.header-search').fadeIn(1);
     }
 
-    $('.hamburger').removeClass('is-active')
+    if($(this).width() < 768) {
+        $('.header-search').fadeOut(100);
+    }
+
+    $('.hamburger').removeClass('is-active');
+
 
 })
 
